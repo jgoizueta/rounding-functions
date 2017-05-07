@@ -32,6 +32,7 @@ Summary of rounding modes table: [rounding_modes.html](rounding_modes.html).
 
 The [rounding modes](https://github.com/jgoizueta/flt/blob/v1.5.1/lib/flt/num.rb#L150-L157) of Flt are equivalent to those of General Decimal Arithmetic:
 
+```latex
 \begin{itemize}
 \item {\em half_even}$={\cal R}_{2,n}(x)$ ({em round to nearest, ties to even})
 \item {\em half_up}$={\cal R}_n(x)={\cal R}_{\infty,n}(x)$ ({\em round to nearest, ties away from zero})
@@ -58,10 +59,11 @@ The [rounding modes](https://github.com/jgoizueta/flt/blob/v1.5.1/lib/flt/num.rb
         \end{array}
  \right.\) 
 \end{itemize}
+```
 
 ### Julia
 
-[Julia] https://julialang.org/ rounding modes.
+[Julia](https://julialang.org/) rounding modes.
 
 * Rounding modes: https://docs.julialang.org/en/stable/stdlib/math/#Base.RoundingMode
 * Rounding functions: https://docs.julialang.org/en/stable/manual/mathematical-operations/#man-rounding-functions
