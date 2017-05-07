@@ -6,7 +6,7 @@ Note that the .w source files use the ISO-8859-1 encoding.
 
 The final generated documents are in the `src` directory.
 
-Summary of rounding modes table: [rounding_modes.html](rounding_modes.html).
+Summary of rounding modes table: [rounding_modes.html](http://htmlpreview.github.io/?https://github.com/jgoizueta/rounding-functions/blob/master/rounding_modes.html).
 
 ## TODO
 
