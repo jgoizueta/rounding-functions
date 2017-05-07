@@ -1,0 +1,163 @@
+<html>
+  <head>
+  
+  <title>Rounding Modes</title>
+  
+    <style>
+    body {
+      font-family: Verdana, Helvetica, Arial, sans-serif;
+    }
+    th {
+      background-color:rgb(0,0,100);
+      color:white;
+    }
+    .group {
+      text-align: left;
+      background-color:rgb(100,100,200);
+      color:white;
+    }
+    td {
+      background-color:rgb(230,230,230);
+    }
+    .uses {
+      text-align: left;
+      background-color:rgb(200,200,250);
+      color:black;
+      font-family: Georgia, serif;
+      
+    }
+    .empty {
+      background-color:white;
+    }
+    .code {
+      font-family: Monaco, Consolas, PanicSans, 'Vera Sans', 'Deja Vu Mono', 'Deja Vu Sans', 'Courier New', 'Terminal', 'Courier', monospace; 
+      font-size: 9pt;
+    }
+    </style>
+  </head>
+  <body>
+    <table border="0" cellspacing="5" cellpadding="5">
+      <tr><th colspan="9">Rounding Modes</th></tr>
+      
+      <tr>
+        <th rowspan="2" class="empty"></th><th rowspan="2" class="empty"></th>
+        <th rowspan="2">GDA</th><th colspan="3">IEEE</th>
+        <th rowspan="2">Nio</th><th rowspan="2">Julia</th>
+        <th rowspan="2">Uses</th>
+      </tr>
+      <tr><th>HP71B</th><th>x87</th><th>754-2008</th></tr>
+        
+      <tr>
+        <th class="group">Round to Nearest</th>
+      </tr>
+      
+        <tr>
+            <td>Ties toward even</td><td>&#8475;<sub>2</sub></td>
+            <td class="code">ROUND_HALF_EVEN</td>
+            <td class="code">NEAR</td>
+            <td class="code">00</td>
+            <td class="code">roundTiesToEven [d,b]</td>
+            <td class="code">:even</td>
+            <td class="code">RoundNearest</td>
+            <td rowspan="3" class="uses">
+               <ul><li>Arithmetic (even gives better results)</li><li>Presentation (conventions difer)</li></ul>
+            </td>
+        </tr>
+        
+        <tr>
+          <td>Ties up (&infin;)</td><td>&#8475;<sub>&infin;</sub></td>
+          <td class="code">ROUND_HALF_UP</td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code">roundTiesToAway [d]</td>
+            <td class="code">:inf</td>
+            <td class="code">RoundNearestTiesAway</td>
+        </tr>
+        
+        <tr>
+          <td>Ties down (0)</td><td>&#8475;<sub>0</sub></td>
+          <td class="code">ROUND_HALF_DOWN</td>
+            <td class="code"></td>
+          <td class="code"></td>
+          <td class="code"></td>
+          <td class="code">:zero</td>
+          <td class="code"></td>
+        </tr>
+
+        <tr>
+            <td>Ties up (+&infin;)</td><td>&#8475;<sub>+&infin;</sub></td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code">RoundNearestTiesUp</td>
+        </tr>
+
+        <tr><th class="group">Directed rounding</th></tr>
+        
+        <tr>
+          <td>Toward +&infin; (ceiling)</td><td>&lceil;&nbsp;&rceil;</td>
+          <td class="code">ROUND_CEILING</td>
+            <td class="code">POS</td>
+          <td class="code">10</i></td>
+          <td class="code">roundTowardPositive [b]</td>
+          <td class="code"></td>
+          <td class="code">RoundUp</td>          
+          <td rowspan="2" class="uses">
+            <ul><li>Arithmetic: interval arithmetic, checking results</li></ul>
+          </td>              
+        </tr>
+        
+        <tr>
+          <td>Toward -&infin; (floor)</td><td>&lfloor;&nbsp;&rfloor;</td>
+          <td class="code">ROUND_FLOOR</td>
+            <td class="code">NEG</td>
+          <td class="code">01</td>
+          <td class="code">roundTowardNegative [b]</td>
+          <td class="code"></td>
+          <td class="code">RoundDown</td>           
+        </tr>
+        
+        <tr>
+          <td>Toward &infin; (up, away from zero)</td><td></td>
+          <td class="code">ROUND_UP</td>
+            <td class="code"></td>
+          <td class="code"></td>
+          <td class="code"></td>
+          <td class="code"></td>
+          <td class="code">RoundFromZero</td>           
+        </tr>
+        
+        <tr>
+          <td>Toward 0 (down, truncate)</td><td>&epsilon;</td>
+          <td class="code">ROUND_DOWN</td>
+            <td class="code">ZERO</td>
+          <td class="code">11</td>
+          <td class="code">roundTowardZero [b]</td>
+          <td class="code">:truncate</td>
+          <td class="code">RoundToZero</td>           
+          <td rowspan="1" class="uses">
+            <ul>
+              <li>Arithmetic: (internally for guard digits, checkin results)</li>
+              <li>Presentation: (avoid double rounding, show only correct digits)</li>
+            </ul>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>Toward zero except digits 0 & 5, that round away from zero (05-up)</td><td></td>
+            <td class="code">ROUND_05UP</td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td class="code"></td>
+            <td rowspan="1" class="uses">
+               <ul><li>Re-rounding (compute with 05up, then round shorter with any rounding)</li></ul>
+              </td>
+        </tr>
+
+    </table>
+  </body>
+</html>

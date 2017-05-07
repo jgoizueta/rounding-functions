@@ -1,0 +1,6 @@
+In the graphic for rem.eps generated with mod.nb,
+vertical bar (|) chacters are used in the text labels,
+and Mathematica converts them to \310 in the EPS
+output, which is rendered as " or ¨.
+As a workaround I've replaced \310 by | with
+a text editor in rem.eps.
