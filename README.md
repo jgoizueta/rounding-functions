@@ -70,12 +70,12 @@ The [rounding modes](https://github.com/jgoizueta/flt/blob/v1.5.1/lib/flt/num.rb
 
 Rounding modes correspondence: 
 
-* default (`RoundNearest`) `round(x)` : `${\cal R}_{2}(x)$` (Flt/GDA: `:half_even`)
-* `round(x, RoundNearestTiesAway)` : `${\cal R}(x)$` (Flt/GDA: `:half_up`)
-* `round(x, RoundNearestTiesUp)` : `${\cal R}_{+\infty}(x)$`
-* `round(x, RoundToZero)==trunc(x)` : `${\cal E}(x)$` (Flt/GDA: `:down`)
-* `round(x, RoundUp)==ceil(x)` : `${\lceil x\rceil}$` (Flt/GDA: `:ceiling`)
-* `round(x, RoundDown)==floor(x)` : `${\lfloor x\rfloor}$` (Flt/GDA: `:floor`)
+* default (`RoundNearest`) `round(x)` : ${\cal R}_{2}(x)$ (Flt/GDA: `:half_even`)
+* `round(x, RoundNearestTiesAway)` : ${\cal R}(x)$ (Flt/GDA: `:half_up`)
+* `round(x, RoundNearestTiesUp)` : ${\cal R}_{+\infty}(x)$
+* `round(x, RoundToZero)==trunc(x)` : ${\cal E}(x)$ (Flt/GDA: `:down`)
+* `round(x, RoundUp)==ceil(x)` : ${\lceil x\rceil}$ (Flt/GDA: `:ceiling`)
+* `round(x, RoundDown)==floor(x)` : ${\lfloor x\rfloor}$ (Flt/GDA: `:floor`)
 
 For `BigFloat` and additional mode (corresponding to MPFR `MPFR_RNDA`) is available:
 
