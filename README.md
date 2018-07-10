@@ -222,4 +222,25 @@ R code here: https://github.com/wch/r-source/blob/af7f52f70101960861e5d995d3a4be
 
 See also, for modulo functions: http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi
 
+### Modulo in SQL
 
+#### MySQL
+
+`MOD(x,y)`: $r_d$
+
+Since version 4.1 this is equivalent to `x mod y`.
+For versions prior to 4.1.7 MOD rounded results as integers.
+
+#### PostgreSQL
+
+`MOD(x,y)` = `x % y`: $r_d$
+
+#### Oracle
+
+`MOD(x,y)`: $r_m$
+
+`REMAINDER(x,y)` is equivalent to C99 remainder or GDAL remainder-near
+
+#### DB2
+
+`MOD(x,y)`: $r_m$
